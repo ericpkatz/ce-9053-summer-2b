@@ -13,18 +13,17 @@ var FizzBuzz = {
     }
     var results = [];
     for (var i = 1; i <= max; i = i + 1) {
+      var entry = i;
       if (isFizzBuzz(i)) {
-        results.push('FizzBuzz');
+        entry = 'FizzBuzz';
       }
       else if (isFizz(i)) {
-        results.push('Fizz');
+        entry = 'Fizz';
       }
       else if (isBuzz(i)) {
-        results.push('Buzz');
+        entry = 'Buzz';
       }
-      else {
-        results.push(i);
-      }
+      results.push(entry);
     }
     return results;
   }
