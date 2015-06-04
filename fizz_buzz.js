@@ -11,19 +11,22 @@ var FizzBuzz = {
     function isFizzBuzz(num){
       return isFizz(num) && isBuzz(num);
     }
+    
+    function getEntry(num){
+      if (isFizzBuzz(num)) {
+        return 'FizzBuzz';
+      }
+      else if (isFizz(num)) {
+        return 'Fizz';
+      }
+      else if (isBuzz(num)) {
+        return 'Buzz';
+      }      
+      return num;
+    }
     var results = [];
     for (var i = 1; i <= max; i = i + 1) {
-      var entry = i;
-      if (isFizzBuzz(i)) {
-        entry = 'FizzBuzz';
-      }
-      else if (isFizz(i)) {
-        entry = 'Fizz';
-      }
-      else if (isBuzz(i)) {
-        entry = 'Buzz';
-      }
-      results.push(entry);
+      results.push(getEntry(i));
     }
     return results;
   }
